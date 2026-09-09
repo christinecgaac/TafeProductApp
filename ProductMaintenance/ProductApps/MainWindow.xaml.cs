@@ -34,6 +34,7 @@ namespace ProductApps
                 cProduct = new Product(Convert.ToDecimal(priceTextBox.Text), Convert.ToInt16(quantityTextBox.Text));
                 cProduct.calTotalPayment();
                 totalPaymentTextBlock.Text = Convert.ToString(cProduct.TotalPayment);
+                totalGSTChargeTextBox.Text = Convert.ToString((cProduct.TotalPayment + 25.00m + 5.00m) * 1.1m);
                 totalChargeTextBox.Text = Convert.ToString(cProduct.TotalPayment + 25.00m);
                 totalWrapChargeTextBox.Text = Convert.ToString(cProduct.TotalPayment + 25.00m + 5.00m);
             }
@@ -47,6 +48,7 @@ namespace ProductApps
         {
             productTextBox.Text = "";
             totalChargeTextBox.Text = "";
+            totalGSTChargeTextBox.Text = "";
             totalWrapChargeTextBox.Text = "";
             priceTextBox.Text = "";
             quantityTextBox.Text = "";
